@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import Form from "./Form";
-import Produto from "./Produto";
+import Product from "./Product";
 
 export default function Dashboard() {
   return (
     <Fragment>
       <Form />
-      <Produto />
+      <Product />
     </Fragment>
   );
 }

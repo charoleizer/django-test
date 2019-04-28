@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import Header from "./layout/Header";
-import Dashboard from "./produto/Dashboard";
+import Dashboard from "./product/Dashboard";
 
 class App extends React.Component {
   render() {

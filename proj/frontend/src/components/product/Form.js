@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-export class Produto extends Component {
+export class Form extends Component {
   render() {
     return (
       <div>
-        <h1>Produtos List</h1>
+        <h1>Add Product Form</h1>
       </div>
     );
   }
 }
 
-export default Produto;
+export default Form;
