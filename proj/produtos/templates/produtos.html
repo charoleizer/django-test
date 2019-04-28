@@ -11,7 +11,7 @@
     
     <ul>
     {% for produto in produtos %}
-        <li>{{ produto.nome }} {{ produto.descricao }} {{ produto.preco }}</li>
+        <li>{{ produto.nome }} {{ produto.descricao }} {{ produto.preco }} >>> Criado/Modificado em: {{ produto.datahora }}</li>
     {% endfor %}
     </ul>
 
