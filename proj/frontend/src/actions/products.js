@@ -7,7 +7,7 @@ export const getProducts = () => dispatch => {
     .then(res => {
       dispatch({
         type: GET_PRODUCTS,
-        payload: red.data
+        payload: res.data
       });
     })
     .catch(err => console.log(err));

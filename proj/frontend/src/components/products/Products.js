@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProducts } from "../../actions/products";
 
-export class Product extends Component {
+export class Products extends Component {
   static propTypes = {
     products: PropTypes.array.isRequired
   };
@@ -19,15 +19,17 @@ export class Product extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>name</th>
-              <th>price</th>
-              <th>description</th>
-              <th>created_at</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Description</th>
+              <th>Created_at</th>
             </tr>
           </thead>
           <tbody>
             {this.props.products.map(products => (
-              <tr key={products.name}>
+              <tr key={products.id}>
+                <td>{products.id}</td>
                 <td>{products.name}</td>
                 <td>{products.price}</td>
                 <td>{products.description}</td>
@@ -51,4 +53,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getProducts }
-)(Product);
+)(Products);
