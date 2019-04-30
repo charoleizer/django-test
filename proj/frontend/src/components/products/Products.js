@@ -8,7 +8,7 @@ export class Products extends Component {
     products: PropTypes.array.isRequired
   };
 
-  ComponentDidMount() {
+  componentDidMount() {
     this.props.getProducts();
   }
 
