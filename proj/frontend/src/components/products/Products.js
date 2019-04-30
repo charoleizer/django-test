@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getProducts } from "../../actions/products";
+import { getProducts, deleteProduct } from "../../actions/products";
 
 export class Products extends Component {
   static propTypes = {
@@ -27,15 +27,21 @@ export class Products extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.products.map(products => (
-              <tr key={products.id}>
-                <td>{products.id}</td>
-                <td>{products.name}</td>
-                <td>{products.price}</td>
-                <td>{products.description}</td>
-                <td>{products.created_at}</td>
+            {this.props.products.map(product => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.name}</td>
+                <td>{product.price}</td>
+                <td>{product.description}</td>
+                <td>{product.created_at}</td>
                 <td>
-                  <button className="btn btn-danger btn-sm"> Delete</button>
+                  <button
+                    onClick={this.props.deleteProduct.bind(this, product.id)}
+                    className="btn btn-danger btn-sm"
+                  >
+                    {" "}
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -52,5 +58,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProducts }
+  { getProducts, deleteProduct }
 )(Products);
