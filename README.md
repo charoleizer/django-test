@@ -1,1 +1,1 @@
-# django-test + react
+# django + react test
